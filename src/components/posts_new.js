@@ -5,7 +5,7 @@ import { reduxForm } from 'redux-form'
 class PostsNew extends Component {
   render() {
     const { fields: { title, categories, content }, handleSubmit } = this.props;
-    console.log(title);
+    console.log(handleSubmit);
 
     return (
       <form onSubmit={handleSubmit}>
@@ -16,11 +16,11 @@ class PostsNew extends Component {
         </div>
         <div className="form-group">
           <label>Categories</label>
-          <input type="text" className="form-control" />
+          <input type="text" className="form-control" {...categories} />
         </div>
         <div className="form-group">
           <label>Content</label>
-          <textarea className="form-control" />
+          <textarea className="form-control" {...content} />
         </div>
         <button type="submit" className="btn btn-primary">Submit</button>
       </form>
